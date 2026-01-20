@@ -1,22 +1,34 @@
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
 const currentTheme = localStorage.getItem('theme');
 
+// Function to update icon
+function updateIcon(theme) {
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+// Initial Check
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
+    updateIcon(currentTheme);
 }
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+// Event Listener
+themeToggleBtn.addEventListener('click', function() {
+    let theme = 'light';
+    if (document.documentElement.getAttribute('data-theme') === 'light' || !document.documentElement.getAttribute('data-theme')) {
+        theme = 'dark';
     }
-    else {        document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-    }
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
+    
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateIcon(theme);
+    
+    // Add small rotation animation class if desired, or simpler via CSS active state
+});
