@@ -4085,14 +4085,14 @@ i {
 	/* Super glow on hover */
 }
 
-/* Floating Theme Toggle Button */
+/* Floating Theme Toggle Button - Bottom Left */
 .theme-toggle-btn {
 	position: fixed;
 	bottom: 30px;
-	right: 30px;
+	left: 30px;
 	width: 50px;
 	height: 50px;
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 50%;
@@ -4100,10 +4100,11 @@ i {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 	z-index: 1000;
 	transition: all 0.3s ease;
 	border: 1px solid rgba(0, 0, 0, 0.05);
+	opacity: 0.8;
 }
 
 .theme-toggle-btn i {
@@ -4115,12 +4116,14 @@ i {
 .theme-toggle-btn:hover {
 	transform: translateY(-3px) scale(1.1);
 	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	opacity: 1;
 }
 
 /* Dark Mode Styles for Toggle */
 [data-theme="dark"] .theme-toggle-btn {
-	background: rgba(30, 41, 59, 0.6);
+	background: rgba(30, 41, 59, 0.4);
 	border-color: rgba(255, 255, 255, 0.1);
+	opacity: 0.8;
 }
 
 [data-theme="dark"] .theme-toggle-btn i {
@@ -4129,7 +4132,68 @@ i {
 	text-shadow: 0 0 10px rgba(252, 163, 17, 0.5);
 }
 
+/* Dark Mode Hover for Toggle */
+[data-theme="dark"] .theme-toggle-btn:hover {
+	opacity: 1;
+}
+
 /* Rotation animation */
 .theme-toggle-btn:active i {
 	transform: rotate(360deg);
+}
+
+/* Scroll to Top Button - Bottom Right */
+.scroll-to-top-btn {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 50px;
+	height: 50px;
+	background: rgba(74, 202, 168, 0.9);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: 0 4px 15px rgba(74, 202, 168, 0.3);
+	z-index: 1000;
+	transition: all 0.3s ease;
+	border: none;
+	opacity: 0;
+	visibility: hidden;
+	text-decoration: none;
+}
+
+.scroll-to-top-btn.visible {
+	opacity: 0.8;
+	visibility: visible;
+}
+
+.scroll-to-top-btn i {
+	font-size: 1.2em;
+	color: #fff;
+	transition: transform 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+	transform: translateY(-3px) scale(1.1);
+	box-shadow: 0 8px 25px rgba(74, 202, 168, 0.4);
+	opacity: 1;
+}
+
+.scroll-to-top-btn:hover i {
+	transform: translateY(-2px);
+}
+
+/* Dark Mode Styles for Scroll to Top */
+[data-theme="dark"] .scroll-to-top-btn {
+	background: rgba(74, 202, 168, 0.8);
+	box-shadow: 0 4px 15px rgba(74, 202, 168, 0.2);
+}
+
+[data-theme="dark"] .scroll-to-top-btn:hover {
+	box-shadow: 0 0 20px rgba(74, 202, 168, 0.5);
+	opacity: 1;
 }
