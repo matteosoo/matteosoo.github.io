@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<!--
+    Resume Page - Matteo Soo Portfolio
+    Part of matteosoo.github.io
+-->
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134187293-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-134187293-1');
+    </script>
+    <title>Resume | Matteo Soo</title>
+    <meta name="description"
+        content="Download and view the professional resume of Matteo Soo, a Machine Learning Engineer specializing in GenAI, TTS, and NLP." />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+    <link href="assets/css/main.css?v=3" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <style>
+        /* Page-specific styles for Resume Page */
+        .subpage-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .subpage-nav {
+            background: rgba(17, 24, 39, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #4acaa8;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-brand h1 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] .nav-brand h1 {
+            color: #f8fafc;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4acaa8;
+            background: rgba(74, 202, 168, 0.1);
+        }
+
+        [data-theme="dark"] .nav-links a {
+            color: #cbd5e1;
+        }
+
+        [data-theme="dark"] .nav-links a:hover {
+            color: #4acaa8;
+            background: rgba(74, 202, 168, 0.15);
+        }
+
+        .nav-links a.active {
+            color: #4acaa8;
+            background: rgba(74, 202, 168, 0.1);
+        }
+
+        .subpage-main {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+
+        [data-theme="dark"] .subpage-main {
+            background: #0b0f19;
+        }
+
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .resume-header h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        [data-theme="dark"] .resume-header h2 {
+            color: #f8fafc;
+        }
+
+        .resume-header p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        [data-theme="dark"] .resume-header p {
+            color: #cbd5e1;
+        }
+
+        .resume-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4acaa8 0%, #3db892 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(74, 202, 168, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 202, 168, 0.4);
+            color: #fff !important;
+        }
+
+        .btn-secondary {
+            background: rgba(0, 0, 0, 0.05);
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #333 !important;
+        }
+
+        [data-theme="dark"] .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+        }
+
+        [data-theme="dark"] .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #f8fafc !important;
+        }
+
+        .pdf-viewer-wrapper {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        [data-theme="dark"] .pdf-viewer-wrapper {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .pdf-viewer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        [data-theme="dark"] .pdf-viewer-header {
+            background: rgba(17, 24, 39, 0.5);
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .pdf-viewer-header span {
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        [data-theme="dark"] .pdf-viewer-header span {
+            color: #f8fafc;
+        }
+
+        .pdf-viewer-header i {
+            color: #4acaa8;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: calc(100vh - 250px);
+            min-height: 600px;
+            border: none;
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        [data-theme="dark"] .nav-toggle {
+            color: #f8fafc;
+        }
+
+        @media screen and (max-width: 768px) {
+            .subpage-nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-20px);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .nav-links {
+                background: rgba(17, 24, 39, 0.98);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+            }
+
+            .resume-container {
+                padding: 1rem;
+            }
+
+            .resume-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .pdf-embed {
+                height: calc(100vh - 280px);
+                min-height: 400px;
+            }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: #888;
+            text-decoration: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #4acaa8;
+        }
+
+        .breadcrumb span {
+            color: #333;
+        }
+
+        [data-theme="dark"] .breadcrumb span {
+            color: #f8fafc;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Footer */
+        .subpage-footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .subpage-footer a {
+            color: #4acaa8;
+            border: none;
+        }
+
+        /* Back to top button now uses .scroll-to-top-btn from main.css */
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- Navigation -->
+    <nav class="subpage-nav" id="navbar">
+        <div class="nav-brand">
+            <a href="index.html">
+                <img src="images/avatar_portrait.jpg" alt="Matteo Soo" />
+            </a>
+            <h1>Matteo Soo</h1>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#interests">Interests</a>
+            <a href="resume.html" class="active">Resume</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="subpage-main">
+        <div class="resume-container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Resume</span>
+            </nav>
+
+            <!-- Header Section -->
+            <header class="resume-header">
+                <h2>📄 My Resume</h2>
+                <p>Machine Learning Engineer with expertise in GenAI, TTS, and NLP</p>
+
+                <div class="resume-actions">
+                    <a href="file/matteosoo_resume.pdf" download class="btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <a href="file/matteosoo_resume.pdf" target="_blank" class="btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                    <a href="index.html#experience" class="btn-secondary">
+                        <i class="fas fa-briefcase"></i> View Experience
+                    </a>
+                </div>
+            </header>
+
+            <!-- PDF Viewer -->
+            <section class="pdf-viewer-wrapper">
+                <div class="pdf-viewer-header">
+                    <span><i class="fas fa-file-pdf"></i> matteosoo_resume.pdf</span>
+                </div>
+                <iframe src="file/matteosoo_resume.pdf" class="pdf-embed" title="Matteo Soo Resume PDF"></iframe>
+            </section>
+
+            <!-- Footer -->
+            <footer class="subpage-footer">
+                <p>
+                    <a href="mailto:matteosoo11@gmail.com"><i class="fas fa-envelope"></i> matteosoo11@gmail.com</a>
+                </p>
+                <p>&copy; Matteo Soo 2018-2026 | <a href="http://html5up.net">HTML5 UP</a></p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Scroll to Top Button (Bottom Right) -->
+    <a href="#" class="scroll-to-top-btn" id="scroll-to-top" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-btn" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/toggleswitch.js"></script>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.getElementById('nav-toggle').addEventListener('click', function () {
+            document.getElementById('nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+                const icon = document.getElementById('nav-toggle').querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollToTop = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollToTop.classList.add('visible');
+            } else {
+                scrollToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for scroll to top
+        scrollToTop.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Remove preload class after page load
+        window.addEventListener('load', function () {
+            document.body.classList.remove('is-preload');
+        });
+    </script>
+
+</body>
+
+</html>
