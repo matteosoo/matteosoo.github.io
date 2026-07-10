@@ -3711,7 +3711,9 @@ ul.skill-tags li:hover {
 	opacity: 0;
 	/* Hidden initially for scroll reveal */
 	transform: translateY(20px);
-	transition: all 0.6s ease-out;
+	/* Only animate reveal properties — margin-top is set by the
+	   stagger layout in scroll-observer.js and must not animate */
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Visibility state for JS observer */
